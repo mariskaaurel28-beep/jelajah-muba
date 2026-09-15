@@ -1,0 +1,5820 @@
+:root {
+  --gold: #e9a82e;
+  --gold2: #ffc85a;
+  --ink: #11100e;
+  --dark: #17130f;
+  --cream: #f7f5f1;
+  --muted: #6c6a66;
+  --line: #dedbd5;
+  --white: #fff;
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  font-family: "DM Sans", Arial, sans-serif;
+  background: var(--cream);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 74px;
+  display: flex;
+  align-items: center;
+  padding: 0 4.5%;
+  background: rgba(8, 8, 8, 0.94);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  gap: 28px;
+}
+
+/* =========================
+   LOGO HEADER
+========================= */
+.brand {
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  flex: 0 0 auto;
+  min-width: 0;
+
+  white-space: nowrap;
+}
+
+.brand-mark {
+  width: 52px;
+  height: 62px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logo-dispopar {
+  width: 105px;
+  height: 62px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brand img:nth-of-type(3) {
+  width: 120px;
+  height: 62px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.logo-tambahan {
+  width: 82px;
+  height: 62px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brand b {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.brand small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 2.3px;
+  margin-top: 5px;
+  color: #ddd;
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 14px;
+
+  flex: 1;
+  min-width: 0;
+
+  overflow: visible;
+}
+
+.desktop-nav a {
+  font-size: 10px;
+  font-weight: 700;
+
+  white-space: nowrap;
+
+  letter-spacing: 0;
+
+  padding: 28px 0 24px;
+
+  border-bottom: 2px solid transparent;
+
+  flex-shrink: 1;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a.active {
+  color: var(--gold2);
+  border-color: var(--gold);
+}
+
+.header-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  flex: 0 0 auto;
+}
+
+
+.editor-btn {
+  height: 38px;
+
+  padding: 0 13px;
+
+  border: 1px solid #d49b29;
+
+  border-radius: 12px;
+
+  background: transparent;
+
+  color: #f4c04e;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.menu-btn {
+  border: 0;
+
+  background: none;
+
+  color: white;
+
+  font-size: 25px;
+
+  padding: 0;
+
+  line-height: 1;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  height: 720px;
+  position: relative;
+  color: #fff;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("images/latar\ muba.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.94) 0%,
+      rgba(0, 0, 0, 0.76) 27%,
+      rgba(0, 0, 0, 0.18) 65%,
+      rgba(0, 0, 0, 0.18) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.55),
+      transparent 45%
+    );
+}
+
+.hero-content {
+  position: absolute;
+  left: 7%;
+  top: 185px;
+  max-width: 650px;
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 5px;
+  font-weight: 700;
+  color: var(--gold);
+  margin: 0 0 22px;
+}
+
+.eyebrow.dark {
+  color: #b36d12;
+}
+
+.hero h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 62px;
+  line-height: 1.02;
+  font-weight: 500;
+  margin: 0 0 18px;
+}
+
+.hero h1 em {
+  color: #f5b338;
+}
+
+.hero-copy {
+  font-size: 15px;
+  line-height: 1.75;
+  max-width: 530px;
+  color: #e8e6e2;
+  margin-bottom: 28px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 18px;
+  border-radius: 13px;
+  border: 1px solid transparent;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #ffc85a, #e7a02a);
+  color: #18120b;
+}
+
+.btn-outline {
+  border-color: rgba(255, 255, 255, 0.75);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: #111;
+}
+
+.btn-outline.light {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.scroll-hint {
+  position: absolute;
+  right: 28px;
+  top: 290px;
+  writing-mode: vertical-rl;
+  letter-spacing: 4px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.scroll-hint span {
+  font-size: 26px;
+  margin-top: 14px;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.section {
+  padding: 76px 5%;
+  max-width: 1500px;
+  margin: auto;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr 0.9fr;
+  gap: 32px;
+  align-items: center;
+  background: #f7f5f1;
+}
+
+.about h2,
+.section-heading h2,
+.contact h2 {
+  font: 500 34px/1.12 "Playfair Display", Georgia, serif;
+  margin: 0 0 16px;
+}
+
+.about h2 em,
+.contact h2 em {
+  color: #c27d20;
+}
+
+.about-text > p:not(.eyebrow) {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #666;
+  max-width: 420px;
+}
+
+.text-link {
+  color: #a9600d;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.about-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.image-box {
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.image-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 55px 18px 17px;
+  background: linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.88)
+  );
+  color: white;
+}
+
+.image-caption span {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #f4b43b;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.image-caption b {
+  font: 500 16px "Playfair Display", Georgia, serif;
+}
+.about-points {
+  display: grid;
+  gap: 22px;
+}
+
+.about-points > div {
+  display: flex;
+  gap: 16px;
+}
+
+.round-icon {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border: 1px solid #d08a24;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 21px;
+}
+
+.about-points h3 {
+  font: 600 15px Georgia, serif;
+  margin: 0 0 5px;
+}
+
+.about-points p {
+  font-size: 12px;
+  line-height: 1.65;
+  color: #686764;
+  margin: 0;
+}
+
+
+/* =========================
+   STATS
+========================= */
+
+.stats {
+  background: #231d16;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 18px 8%;
+  gap: 0;
+}
+
+.stats > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  border-right: 1px solid rgba(255, 255, 255, 0.35);
+  min-height: 78px;
+}
+
+.stats > div:last-child {
+  border: 0;
+}
+
+.stats b {
+  font: 500 32px Georgia, serif;
+  color: #f4b33d;
+}
+
+.stats span {
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+
+/* =========================
+   SEARCH & FILTER
+========================= */
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 25px;
+}
+
+.search-box {
+  display: flex;
+  width: 285px;
+  border: 1px solid #d5d2cb;
+  background: #fff;
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.search-box input {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  padding: 11px 13px;
+  font-size: 12px;
+  background: transparent;
+}
+
+.search-box span {
+  padding: 10px 13px;
+  font-size: 20px;
+}
+
+.filter-row {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin: 20px 330px 28px 0;
+}
+
+.filter {
+  padding: 9px 18px;
+  border: 1px solid #ddd9d2;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.filter.active {
+  background: #101010;
+  color: white;
+  border-color: #101010;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 13px;
+  overflow: hidden;
+  border: 1px solid #e4e0d9;
+  transition: 0.25s;
+  box-shadow: 0 6px 20px rgba(30, 20, 10, 0.04);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 30px rgba(30, 20, 10, 0.1);
+}
+
+.card-image {
+  height: 185px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+}
+
+.badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 7px 10px;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  background: #287f63;
+}
+
+.badge.hotel {
+  background: #4c82b4;
+}
+
+.badge.kuliner {
+  background: #d96d18;
+}
+
+.badge.event {
+  background: #7d3cb0;
+}
+
+.card-body {
+  padding: 17px;
+}
+
+.card-body h3 {
+  font: 600 19px "Playfair Display", Georgia, serif;
+  margin: 0 0 7px;
+}
+
+.card-meta {
+  font-size: 10px;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.card-body p {
+  font-size: 11px;
+  line-height: 1.55;
+  color: #666;
+  margin: 0 0 13px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eee;
+  padding-top: 12px;
+}
+
+.price {
+  font-size: 11px;
+  font-weight: 800;
+  color: #a8610d;
+}
+
+.more {
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.empty {
+  grid-column: 1 / -1;
+  padding: 50px;
+  text-align: center;
+  color: #777;
+  background: #fff;
+  border-radius: 15px;
+}
+
+
+/* =========================
+   EVENT
+========================= */
+
+.event-section {
+  background: #211b15;
+  color: white;
+}
+
+.event-section .section {
+  max-width: 1500px;
+}
+
+.event-heading {
+  align-items: center;
+}
+
+.event-heading h2 {
+  margin-bottom: 0;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding-top: 25px;
+}
+
+.event-card {
+  min-height: 210px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  background: #333;
+}
+
+.event-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+}
+
+.event-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.05)
+  );
+}
+
+.event-card-content {
+  position: absolute;
+  z-index: 1;
+  left: 20px;
+  right: 20px;
+  bottom: 18px;
+}
+
+.date-chip {
+  display: inline-block;
+  background: #e8a62e;
+  color: #15110c;
+  padding: 6px 9px;
+  border-radius: 7px;
+  font-size: 9px;
+  font-weight: 800;
+  margin-bottom: 9px;
+}
+
+.event-card h3 {
+  font: 500 22px "Playfair Display", Georgia, serif;
+  margin: 0 0 6px;
+}
+
+.event-card p {
+  font-size: 11px;
+  color: #ddd;
+  margin: 0;
+}
+
+
+/* =========================
+   ACHIEVEMENTS
+========================= */
+
+.achievements {
+  background: #fff;
+}
+
+.section-note {
+  max-width: 430px;
+  font-size: 12px;
+  color: #777;
+  line-height: 1.7;
+}
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.achievement {
+  background: #faf8f3;
+  border: 1px solid #e4dfd5;
+  border-radius: 15px;
+  padding: 23px;
+  display: flex;
+  gap: 16px;
+}
+
+.award-icon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #fff2d3;
+  border: 1px solid #e0a22c;
+  color: #a9650e;
+  font-size: 22px;
+}
+
+.achievement h3 {
+  font: 600 17px "Playfair Display", Georgia, serif;
+  margin: 0 0 6px;
+}
+
+.achievement p {
+  font-size: 11px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+.achievement small {
+  display: block;
+  color: #a9650e;
+  font-size: 9px;
+  font-weight: 800;
+  margin-top: 8px;
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+  background: #f7f5f1;
+}
+
+.gallery-count {
+  font-size: 11px;
+  color: #777;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 170px;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+  background: #ddd;
+}
+
+.gallery-item:nth-child(1) {
+  grid-row: span 2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.35s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 35px 12px 10px;
+  background: linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.8)
+  );
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   MAP
+========================= */
+
+.map-section {
+  background: #211b15;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 0.85fr 1.3fr;
+  gap: 40px;
+  padding: 70px 8%;
+}
+
+.map-copy {
+  align-self: center;
+}
+
+.map-copy h2 {
+  font: 500 42px/1.08 "Playfair Display", Georgia, serif;
+  margin: 0 0 16px;
+}
+
+.map-copy h2 em {
+  color: #f3b33b;
+}
+
+.map-copy > p:not(.eyebrow) {
+  color: #ccc;
+  font-size: 13px;
+  line-height: 1.7;
+  max-width: 430px;
+  margin-bottom: 24px;
+}
+
+.map-card {
+  height: 330px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.map-card iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+/* =========================
+   CONTACT & FOOTER
+========================= */
+
+.contact {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.contact-copy {
+  max-width: 500px;
+  color: #666;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.contact h2 {
+  font-size: 42px;
+}
+
+footer {
+  background: #0d0c0b;
+  color: #ddd;
+  padding: 30px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  font-size: 11px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-logo {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  display: block;
+}
+
+.footer-brand b {
+  font-family: Georgia, serif;
+  font-size: 18px;
+  color: white;
+}
+
+.footer-brand small {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 2px;
+  margin-top: 3px;
+  color: #aaa;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  inset: 0;
+}
+
+.modal.open {
+  display: block;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(5px);
+}
+
+.modal-panel {
+  position: relative;
+  background: #fff;
+  border-radius: 18px;
+  max-width: 980px;
+  max-height: 90vh;
+  overflow: auto;
+  margin: 5vh auto;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.modal-close {
+  position: absolute;
+  z-index: 5;
+  right: 15px;
+  top: 12px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.9);
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 24px;
+}
+
+.detail-panel {
+  padding: 0;
+}
+
+.detail-hero {
+  height: 300px;
+  position: relative;
+}
+
+.detail-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.detail-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.85),
+    transparent 65%
+  );
+}
+
+.detail-title {
+  position: absolute;
+  z-index: 2;
+  left: 28px;
+  bottom: 22px;
+  color: #fff;
+}
+
+.detail-title h2 {
+  font: 500 36px "Playfair Display", Georgia, serif;
+  margin: 0 0 5px;
+}
+
+.detail-title p {
+  margin: 0;
+  font-size: 11px;
+  color: #eee;
+}
+
+.detail-body {
+  padding: 26px 30px 30px;
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr;
+  gap: 30px;
+}
+
+.detail-body h3 {
+  font: 600 20px "Playfair Display", Georgia, serif;
+  margin: 0 0 10px;
+}
+
+.detail-body p {
+  font-size: 12px;
+  line-height: 1.75;
+  color: #666;
+}
+
+.info-list {
+  display: grid;
+  gap: 10px;
+}
+
+.info {
+  padding: 12px;
+  border-radius: 10px;
+  background: #f6f3ed;
+  font-size: 11px;
+}
+
+.info b {
+  display: block;
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #a86713;
+  margin-bottom: 3px;
+}
+
+.detail-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.gallery-mini {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.gallery-mini img {
+  height: 85px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+
+/* =========================
+   EDITOR
+========================= */
+
+.editor-panel {
+  padding: 30px;
+  max-width: 1100px;
+}
+
+.editor-head h2,
+.form-panel h2 {
+  font: 500 34px "Playfair Display", Georgia, serif;
+  margin: 0 0 8px;
+}
+
+.editor-head > div > p:last-child {
+  font-size: 11px;
+  color: #777;
+}
+
+.editor-tabs {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid #e5e0d7;
+  margin: 22px 0 15px;
+  overflow: auto;
+}
+
+.editor-tab {
+  border: 0;
+  background: transparent;
+  padding: 11px 15px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.editor-tab.active {
+  color: #a56512;
+  border-bottom: 2px solid #d89927;
+}
+
+.editor-toolbar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.btn-soft {
+  background: #f2efe9;
+  color: #333;
+  border-color: #ddd7ce;
+}
+
+.btn-danger {
+  background: #f8e2df;
+  color: #a32e22;
+  border-color: #edc2bc;
+}
+
+.file-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.file-btn input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.editor-item {
+  display: grid;
+  grid-template-columns: 75px 1fr auto;
+  gap: 15px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #e4dfd7;
+  border-radius: 12px;
+  margin-bottom: 9px;
+  background: #fff;
+}
+
+.editor-item img {
+  width: 75px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.editor-item h4 {
+  margin: 0 0 4px;
+  font: 600 16px Georgia, serif;
+}
+
+.editor-item p {
+  margin: 0;
+  font-size: 10px;
+  color: #777;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.mini-btn {
+  border: 1px solid #ddd7ce;
+  background: #f7f5f1;
+  border-radius: 8px;
+  padding: 7px 9px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-panel {
+  padding: 30px;
+  max-width: 850px;
+}
+
+.form-panel h2 {
+  margin-bottom: 22px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+
+.form-grid label {
+  font-size: 10px;
+  font-weight: 800;
+  color: #555;
+}
+
+.form-grid input,
+.form-grid textarea {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  border: 1px solid #d9d4cb;
+  border-radius: 9px;
+  padding: 10px 11px;
+  outline: none;
+  background: #fbfaf8;
+  font-size: 12px;
+  resize: vertical;
+}
+
+.form-grid input:focus,
+.form-grid textarea:focus {
+  border-color: #d69a2c;
+}
+
+.form-grid .full {
+  grid-column: 1 / -1;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 9px;
+  margin-top: 20px;
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast {
+  position: fixed;
+  z-index: 200;
+  right: 20px;
+  bottom: 20px;
+  background: #15120f;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  font-size: 11px;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: 0.25s;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: none;
+}
+
+
+/* =========================
+   RESPONSIVE 1200px
+========================= */
+
+@media (max-width: 1200px) {
+  .desktop-nav {
+    gap: 15px;
+  }
+
+  .desktop-nav a {
+    font-size: 10px;
+  }
+
+  .brand {
+    min-width: 190px;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .about {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .about-points {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .filter-row {
+    margin: -39px 0 28px;
+  }
+}
+
+
+/* =========================
+   RESPONSIVE 900px
+========================= */
+
+@media (max-width: 900px) {
+  
+  .site-header {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 74px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 2%;
+
+  background: rgba(8, 8, 8, 0.94);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+
+  color: #fff;
+
+  gap: 10px;
+
+  /* JANGAN POTONG ISI HEADER */
+  overflow: visible;
+}
+
+
+  .desktop-nav,
+  .editor-btn {
+    display: none;
+  }
+
+  .brand {
+    flex: 1;
+  }
+
+  .mobile-nav {
+    position: fixed;
+    z-index: 49;
+    top: 74px;
+    left: 0;
+    right: 0;
+    background: #111;
+    color: #fff;
+    padding: 14px 22px;
+    display: none;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .mobile-nav.open {
+    display: flex;
+  }
+
+  .mobile-nav a {
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .hero {
+    height: 650px;
+  }
+
+  .hero-content {
+    left: 6%;
+    right: 6%;
+    top: 155px;
+  }
+
+  .hero h1 {
+    font-size: 50px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 12px 4%;
+  }
+
+  .stats > div:nth-child(2) {
+    border: 0;
+  }
+
+  .stats > div {
+    min-height: 75px;
+  }
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .achievement-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .map-section {
+    grid-template-columns: 1fr;
+  }
+
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .event-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* =========================
+   RESPONSIVE 620px
+========================= */
+
+@media (max-width: 620px) {
+  .section {
+    padding: 58px 20px;
+  }
+
+  .hero {
+    height: 680px;
+  }
+
+  .hero-content {
+    top: 140px;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-copy {
+    font-size: 13px;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+
+  .scroll-hint {
+    display: none;
+  }
+
+  .about {
+    display: block;
+  }
+
+  .about-text {
+    margin-bottom: 28px;
+  }
+
+  .about-feature {
+    margin-bottom: 28px;
+  }
+
+  .about-points {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stats b {
+    font-size: 25px;
+  }
+
+  .stats span {
+    font-size: 10px;
+  }
+
+  .section-heading {
+    display: block;
+  }
+
+  .search-box {
+    width: 100%;
+    margin-top: 18px;
+  }
+
+  .filter-row {
+    justify-content: flex-start;
+    overflow: auto;
+    margin: 18px 0;
+  }
+
+  .filter {
+    white-space: nowrap;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .event-grid,
+  .achievement-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 130px;
+  }
+
+  .gallery-item:nth-child(1) {
+    grid-row: span 2;
+  }
+
+  .map-section {
+    padding: 55px 20px;
+  }
+
+  .map-copy h2 {
+    font-size: 36px;
+  }
+
+  .map-card {
+    height: 280px;
+  }
+
+  .contact h2 {
+    font-size: 36px;
+  }
+
+  footer {
+    display: block;
+  }
+
+  .footer-brand {
+    margin-bottom: 18px;
+  }
+
+  .detail-body {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .detail-hero {
+    height: 240px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid .full {
+    grid-column: auto;
+  }
+
+  .editor-panel {
+    padding: 22px 16px;
+  }
+
+  .editor-item {
+    grid-template-columns: 58px 1fr;
+  }
+
+  .editor-item img {
+    width: 58px;
+    height: 48px;
+  }
+
+  .editor-actions {
+    grid-column: 2;
+  }
+
+  .modal-panel {
+    margin: 2vh 10px;
+    max-height: 96vh;
+  }
+}
+
+
+
+
+
+
+/* =========================================
+   DOKUMENTASI - TEMA JELAJAH MUBA
+========================================= */
+
+.documentation-page{
+  position:relative;
+  min-height:100%;
+  padding:38px 38px 50px;
+  overflow:hidden;
+
+  /* Background utama */
+  background:
+    radial-gradient(
+      circle at 8% 5%,
+      rgba(224,168,58,.18),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 95% 20%,
+      rgba(32,125,101,.14),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #fffdf8 0%,
+      #f7f3ea 45%,
+      #f0eee8 100%
+    );
+}
+
+
+/* Ornamen background */
+
+.documentation-page::before{
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+
+  background:rgba(224,168,58,.08);
+
+  top:-100px;
+  right:-70px;
+
+  pointer-events:none;
+}
+
+.documentation-page::after{
+  content:"";
+  position:absolute;
+  width:220px;
+  height:220px;
+  border-radius:50%;
+
+  background:rgba(26,111,89,.07);
+
+  bottom:-100px;
+  left:-70px;
+
+  pointer-events:none;
+}
+
+
+/* =========================================
+   TOMBOL KEMBALI
+========================================= */
+
+.documentation-back{
+  position:relative;
+  z-index:2;
+
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  border:1px solid rgba(31,29,25,.12);
+
+  background:#fff;
+
+  color:#211d18;
+
+  padding:12px 20px;
+
+  border-radius:12px;
+
+  cursor:pointer;
+
+  font-family:inherit;
+  font-size:13px;
+  font-weight:700;
+
+  box-shadow:
+    0 5px 18px rgba(0,0,0,.06);
+
+  transition:
+    .25s ease;
+}
+
+.documentation-back:hover{
+  background:#211d18;
+  color:#fff;
+
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 8px 22px rgba(0,0,0,.12);
+}
+
+
+/* =========================================
+   JUDUL
+========================================= */
+
+.documentation-heading{
+  position:relative;
+  z-index:2;
+
+  margin-top:35px;
+  margin-bottom:30px;
+
+  padding:28px 30px;
+
+  border-radius:20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #211d18 0%,
+      #30281e 100%
+    );
+
+  box-shadow:
+    0 14px 35px rgba(31,29,25,.16);
+
+  overflow:hidden;
+}
+
+
+/* garis emas */
+
+.documentation-heading::after{
+  content:"";
+
+  position:absolute;
+
+  width:180px;
+  height:180px;
+
+  border-radius:50%;
+
+  border:35px solid rgba(232,174,54,.08);
+
+  right:-70px;
+  top:-80px;
+}
+
+
+/* label DOKUMENTASI */
+
+.documentation-heading p{
+  position:relative;
+  z-index:2;
+
+  color:#e7aa38;
+
+  font-size:11px;
+  font-weight:800;
+
+  letter-spacing:4px;
+
+  margin:0 0 10px;
+}
+
+
+/* judul */
+
+.documentation-heading h2{
+  position:relative;
+  z-index:2;
+
+  margin:0 0 8px;
+
+  color:#fff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:34px;
+  line-height:1.2;
+}
+
+
+/* jumlah foto */
+
+.documentation-heading span{
+  position:relative;
+  z-index:2;
+
+  display:inline-block;
+
+  color:#d8d1c6;
+
+  font-size:13px;
+
+  padding:6px 12px;
+
+  border-radius:20px;
+
+  background:rgba(255,255,255,.08);
+}
+
+
+/* =========================================
+   GRID FOTO
+========================================= */
+
+.documentation-grid{
+  position:relative;
+  z-index:2;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0,1fr));
+
+  gap:18px;
+}
+
+
+/* =========================================
+   CARD FOTO
+========================================= */
+
+.documentation-photo{
+  position:relative;
+
+  height:210px;
+
+  overflow:hidden;
+
+  border-radius:16px;
+
+  background:#ddd;
+
+  border:4px solid rgba(255,255,255,.8);
+
+  box-shadow:
+    0 8px 25px rgba(0,0,0,.10);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+
+.documentation-photo::after{
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.42),
+      transparent 45%
+    );
+
+  opacity:.7;
+
+  pointer-events:none;
+}
+
+
+/* foto */
+
+.documentation-photo img{
+  width:100%;
+  height:100%;
+
+  display:block;
+
+  object-fit:cover;
+
+  transition:
+    transform .5s ease;
+}
+
+
+/* hover */
+
+.documentation-photo:hover{
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+    0 16px 35px rgba(0,0,0,.18);
+}
+
+.documentation-photo:hover img{
+  transform:
+    scale(1.08);
+}
+
+
+/* =========================================
+   NOMOR FOTO
+========================================= */
+
+.documentation-photo::before{
+  content:"";
+
+  position:absolute;
+
+  z-index:3;
+
+  left:12px;
+  bottom:10px;
+
+  width:28px;
+  height:28px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:#e7aa38;
+
+  color:#211d18;
+
+  font-size:11px;
+  font-weight:800;
+}
+
+
+/* =========================================
+   TOMBOL DOKUMENTASI
+========================================= */
+
+.btn-documentation{
+  border:1px solid #211d18 !important;
+
+  background:#211d18 !important;
+
+  color:#fff !important;
+
+  cursor:pointer;
+
+  transition:
+    .25s ease;
+}
+
+.btn-documentation:hover{
+  background:#e7aa38 !important;
+
+  border-color:#e7aa38 !important;
+
+  color:#211d18 !important;
+
+  transform:translateY(-2px);
+}
+
+
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
+
+@media(max-width:1000px){
+
+  .documentation-grid{
+    grid-template-columns:
+      repeat(3, minmax(0,1fr));
+  }
+
+  .documentation-photo{
+    height:190px;
+  }
+
+}
+
+
+/* =========================================
+   RESPONSIVE HP
+========================================= */
+
+@media(max-width:700px){
+
+  .documentation-page{
+    padding:25px 18px 35px;
+  }
+
+  .documentation-heading{
+    padding:22px;
+    margin-top:25px;
+  }
+
+  .documentation-heading h2{
+    font-size:27px;
+  }
+
+  .documentation-grid{
+    grid-template-columns:
+      repeat(2, minmax(0,1fr));
+
+    gap:12px;
+  }
+
+  .documentation-photo{
+    height:150px;
+    border-radius:12px;
+  }
+
+}
+
+
+/* HP KECIL */
+
+@media(max-width:420px){
+
+  .documentation-grid{
+    grid-template-columns:1fr;
+  }
+
+  .documentation-photo{
+    height:210px;
+  }
+
+}
+
+
+
+
+
+/* =========================================
+   DOKUMENTASI - TERSEMBUNYI SAAT NORMAL
+========================================= */
+
+#documentationModal {
+  position: fixed !important;
+  inset: 0 !important;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  z-index: 9999 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: rgba(0, 0, 0, 0.78) !important;
+  backdrop-filter: blur(8px);
+
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+
+  transition: opacity .25s ease, visibility .25s ease;
+}
+
+
+/* BARU MUNCUL KETIKA DIKLIK */
+#documentationModal.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+
+/* KOTAK DOKUMENTASI */
+#documentationModal .documentation-box {
+  width: min(1200px, 94vw);
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  padding: 40px;
+
+  border-radius: 28px;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(225, 174, 55, .18),
+      transparent 25%
+    ),
+    linear-gradient(
+      135deg,
+      #f8f2e4,
+      #eef1e8
+    );
+
+  box-shadow:
+    0 30px 100px rgba(0,0,0,.45);
+
+  position: relative;
+}
+
+
+
+
+/* =========================================================
+   RUMAH MAKAN - MENU
+   TAMBAHAN KHUSUS KULINER
+========================================================= */
+
+.btn-kuliner-menu{
+
+  background:#211d18 !important;
+  color:#fff !important;
+
+  border:1px solid #211d18 !important;
+
+  cursor:pointer;
+
+  position:relative;
+
+  overflow:hidden;
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    color .25s ease,
+    box-shadow .25s ease;
+}
+
+
+.btn-kuliner-menu::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:-120%;
+
+  width:80%;
+  height:100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.22),
+      transparent
+    );
+
+  transform:skewX(-20deg);
+
+  transition:left .5s ease;
+}
+
+
+.btn-kuliner-menu:hover{
+
+  background:#e7aa38 !important;
+
+  border-color:#e7aa38 !important;
+
+  color:#211d18 !important;
+
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(166,103,19,.20);
+}
+
+
+.btn-kuliner-menu:hover::before{
+
+  left:130%;
+}
+
+
+/* =========================================================
+   HALAMAN MENU
+========================================================= */
+
+.kuliner-menu-page{
+
+  position:relative;
+
+  overflow:hidden;
+
+  min-height:100%;
+
+  background:
+
+    radial-gradient(
+      circle at 0% 0%,
+      rgba(231,170,56,.22),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 100% 20%,
+      rgba(32,125,101,.14),
+      transparent 28%
+    ),
+
+    linear-gradient(
+      135deg,
+      #fffdf8 0%,
+      #f7f3ea 48%,
+      #efede6 100%
+    );
+}
+
+
+/* =========================================================
+   HEADER MENU
+========================================================= */
+
+.kuliner-menu-header{
+
+  position:relative;
+
+  padding:
+    42px 42px 38px;
+
+  color:#fff;
+
+  overflow:hidden;
+
+  background:
+
+    linear-gradient(
+      120deg,
+      #211d18 0%,
+      #302920 50%,
+      #171512 100%
+    );
+
+  border-bottom:
+    4px solid #e7aa38;
+}
+
+
+.kuliner-menu-header::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:300px;
+  height:300px;
+
+  right:-100px;
+  top:-150px;
+
+  border-radius:50%;
+
+  border:
+    1px solid rgba(231,170,56,.35);
+}
+
+
+.kuliner-menu-header::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:180px;
+  height:180px;
+
+  left:-100px;
+  bottom:-120px;
+
+  border-radius:50%;
+
+  background:
+    rgba(32,125,101,.12);
+}
+
+
+.kuliner-menu-header-content{
+
+  position:relative;
+
+  z-index:2;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:30px;
+}
+
+
+.kuliner-eyebrow{
+
+  margin:0 0 8px;
+
+  color:#e7aa38;
+
+  font-size:10px;
+
+  font-weight:800;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+}
+
+
+.kuliner-menu-header h2{
+
+  margin:0;
+
+  font:
+    500 38px
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  line-height:1.1;
+}
+
+
+.kuliner-menu-subtitle{
+
+  margin:10px 0 0;
+
+  color:#ddd7cd;
+
+  font-size:12px;
+}
+
+
+.kuliner-menu-logo{
+
+  width:76px;
+  height:76px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  flex:none;
+
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #e7aa38,
+      #c9851d
+    );
+
+  color:#211d18;
+
+  font-size:34px;
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,.30);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.kuliner-menu-content{
+
+  padding:
+    38px 42px 45px;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.kuliner-menu-section{
+
+  margin-bottom:42px;
+}
+
+
+.kuliner-section-title{
+
+  display:flex;
+
+  align-items:flex-end;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+  margin-bottom:18px;
+
+  padding-bottom:13px;
+
+  border-bottom:
+    1px solid #ddd7ca;
+}
+
+
+.kuliner-section-title > div{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:13px;
+}
+
+
+.kuliner-section-title span{
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  width:36px;
+  height:36px;
+
+  border-radius:50%;
+
+  background:#211d18;
+
+  color:#e7aa38;
+
+  font-size:10px;
+
+  font-weight:900;
+}
+
+
+.kuliner-section-title h3{
+
+  margin:0;
+
+  color:#211d18;
+
+  font:
+    600 25px
+    "Playfair Display",
+    Georgia,
+    serif;
+}
+
+
+.kuliner-section-title p{
+
+  margin:0;
+
+  color:#8b8377;
+
+  font-size:10px;
+
+  text-transform:uppercase;
+
+  letter-spacing:1px;
+}
+
+
+/* =========================================================
+   GRID MENU
+========================================================= */
+
+.kuliner-menu-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap:17px;
+}
+
+
+/* =========================================================
+   CARD MENU
+========================================================= */
+
+.kuliner-menu-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  background:#fff;
+
+  border:
+    1px solid #e4ded2;
+
+  border-radius:15px;
+
+  box-shadow:
+    0 8px 24px rgba(33,29,24,.07);
+
+  transition:
+    transform .28s ease,
+    box-shadow .28s ease;
+}
+
+
+.kuliner-menu-card:hover{
+
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+    0 18px 35px rgba(33,29,24,.15);
+}
+
+
+/* =========================================================
+   FOTO MENU
+========================================================= */
+
+.kuliner-menu-photo{
+
+  position:relative;
+
+  height:180px;
+
+  overflow:hidden;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #211d18,
+      #a86713
+    );
+}
+
+
+.kuliner-menu-photo img{
+
+  width:100%;
+  height:100%;
+
+  display:block;
+
+  object-fit:cover;
+
+  transition:
+    transform .5s ease;
+}
+
+
+.kuliner-menu-card:hover
+.kuliner-menu-photo img{
+
+  transform:scale(1.08);
+}
+
+
+.kuliner-menu-photo::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  pointer-events:none;
+
+  background:
+    linear-gradient(
+      0deg,
+      rgba(0,0,0,.55),
+      transparent 58%
+    );
+}
+
+
+.kuliner-menu-photo.no-photo::before{
+
+  content:"🍽";
+
+  position:absolute;
+
+  z-index:1;
+
+  left:50%;
+  top:50%;
+
+  transform:
+    translate(-50%,-50%);
+
+  font-size:45px;
+}
+
+
+/* =========================================================
+   HARGA BADGE
+========================================================= */
+
+.kuliner-price{
+
+  position:absolute;
+
+  z-index:3;
+
+  right:10px;
+  top:10px;
+
+  padding:
+    7px 10px;
+
+  border-radius:20px;
+
+  background:#e7aa38;
+
+  color:#211d18;
+
+  font-size:10px;
+
+  font-weight:900;
+
+  box-shadow:
+    0 5px 12px rgba(0,0,0,.20);
+}
+
+
+.kuliner-number{
+
+  position:absolute;
+
+  z-index:3;
+
+  left:11px;
+  bottom:9px;
+
+  color:#fff;
+
+  font-size:10px;
+
+  font-weight:900;
+
+  letter-spacing:1px;
+}
+
+
+/* =========================================================
+   INFO CARD
+========================================================= */
+
+.kuliner-menu-info{
+
+  padding:
+    15px 15px 17px;
+}
+
+
+.kuliner-menu-info h4{
+
+  margin:0 0 6px;
+
+  color:#211d18;
+
+  font:
+    600 18px
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  line-height:1.25;
+}
+
+
+.kuliner-menu-info span{
+
+  color:#a86713;
+
+  font-size:8px;
+
+  font-weight:900;
+
+  letter-spacing:1.5px;
+}
+
+
+/* =========================================================
+   BOTTOM INFORMATION
+========================================================= */
+
+.kuliner-bottom-info{
+
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:15px;
+
+  margin-top:10px;
+}
+
+
+.kuliner-hours-box,
+.kuliner-social-box{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:14px;
+
+  padding:18px;
+
+  border:
+    1px solid #ded8cc;
+
+  border-radius:14px;
+
+  background:
+    rgba(255,255,255,.72);
+
+  box-shadow:
+    0 8px 20px rgba(33,29,24,.04);
+}
+
+
+.kuliner-info-icon{
+
+  width:43px;
+  height:43px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  flex:none;
+
+  border-radius:50%;
+
+  background:#211d18;
+
+  font-size:18px;
+}
+
+
+.kuliner-hours-box small,
+.kuliner-social-box small{
+
+  display:block;
+
+  margin-bottom:5px;
+
+  color:#a86713;
+
+  font-size:8px;
+
+  font-weight:900;
+
+  letter-spacing:1.5px;
+}
+
+
+.kuliner-hours-box strong{
+
+  color:#211d18;
+
+  font-size:12px;
+}
+
+
+.kuliner-social-box{
+
+  display:block;
+}
+
+
+.kuliner-social-buttons{
+
+  display:flex;
+
+  gap:8px;
+
+  margin-top:7px;
+
+  flex-wrap:wrap;
+}
+
+
+.kuliner-social{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  padding:
+    8px 12px;
+
+  border-radius:20px;
+
+  text-decoration:none;
+
+  font-size:9px;
+
+  font-weight:800;
+
+  transition:
+    transform .2s ease,
+    opacity .2s ease;
+}
+
+
+.kuliner-social:hover{
+
+  transform:translateY(-2px);
+
+  opacity:.82;
+}
+
+
+.kuliner-social.instagram{
+
+  background:#211d18;
+
+  color:#fff;
+}
+
+
+.kuliner-social.tiktok{
+
+  background:#e7aa38;
+
+  color:#211d18;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.kuliner-back-area{
+
+  display:flex;
+
+  justify-content:center;
+
+  margin-top:32px;
+}
+
+
+.kuliner-back-button{
+
+  border:
+    1px solid #211d18;
+
+  background:#211d18;
+
+  color:#fff;
+
+  padding:
+    12px 20px;
+
+  border-radius:8px;
+
+  cursor:pointer;
+
+  font-size:10px;
+
+  font-weight:900;
+
+  letter-spacing:.5px;
+
+  transition:
+    .25s ease;
+}
+
+
+.kuliner-back-button:hover{
+
+  background:#e7aa38;
+
+  color:#211d18;
+
+  border-color:#e7aa38;
+
+  transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   CATATAN
+========================================================= */
+
+.kuliner-note{
+
+  margin-top:17px;
+
+  padding:
+    13px 16px;
+
+  border-radius:10px;
+
+  background:
+    rgba(231,170,56,.10);
+
+  color:#82796b;
+
+  font-size:9px;
+
+  line-height:1.6;
+
+  text-align:center;
+}
+
+
+.kuliner-note span{
+
+  margin-right:5px;
+
+  color:#a86713;
+}
+
+
+/* =========================================================
+   MENU KOSONG
+========================================================= */
+
+.kuliner-empty{
+
+  grid-column:1 / -1;
+
+  padding:35px;
+
+  text-align:center;
+
+  border:
+    1px dashed #cfc7b9;
+
+  border-radius:12px;
+
+  color:#8b8377;
+
+  font-size:11px;
+
+  background:#fff;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px){
+
+  .kuliner-menu-grid{
+
+    grid-template-columns:
+      repeat(2, minmax(0,1fr));
+
+  }
+
+  .kuliner-menu-header{
+
+    padding:32px 25px;
+  }
+
+  .kuliner-menu-content{
+
+    padding:30px 25px 38px;
+  }
+
+}
+
+
+@media(max-width:620px){
+
+  .kuliner-menu-header-content{
+
+    align-items:flex-start;
+  }
+
+  .kuliner-menu-logo{
+
+    width:55px;
+    height:55px;
+
+    font-size:25px;
+  }
+
+  .kuliner-menu-header h2{
+
+    font-size:29px;
+  }
+
+  .kuliner-menu-content{
+
+    padding:25px 18px 32px;
+  }
+
+  .kuliner-menu-grid{
+
+    grid-template-columns:1fr 1fr;
+
+    gap:11px;
+  }
+
+  .kuliner-menu-photo{
+
+    height:145px;
+  }
+
+  .kuliner-menu-info{
+
+    padding:12px;
+  }
+
+  .kuliner-menu-info h4{
+
+    font-size:15px;
+  }
+
+  .kuliner-price{
+
+    font-size:8px;
+
+    padding:6px 8px;
+  }
+
+  .kuliner-section-title{
+
+    display:block;
+  }
+
+  .kuliner-section-title p{
+
+    margin-top:7px;
+  }
+
+  .kuliner-bottom-info{
+
+    grid-template-columns:1fr;
+  }
+
+}
+
+
+@media(max-width:420px){
+
+  .kuliner-menu-header{
+
+    padding:27px 18px;
+  }
+
+  .kuliner-menu-header h2{
+
+    font-size:25px;
+  }
+
+  .kuliner-menu-grid{
+
+    grid-template-columns:1fr 1fr;
+  }
+
+  .kuliner-menu-photo{
+
+    height:125px;
+  }
+
+  .kuliner-menu-info h4{
+
+    font-size:14px;
+  }
+
+  .kuliner-menu-info span{
+
+    font-size:7px;
+  }
+
+  .kuliner-menu-logo{
+
+    display:none;
+  }
+
+}
+
+
+
+
+
+/* =====================================================
+   KHUSUS KARTU RUMAH MAKAN
+   ===================================================== */
+
+.card-kuliner {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-kuliner .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-kuliner .card-body p {
+  flex: 1;
+}
+
+.card-kuliner .kuliner-footer {
+  margin-top: auto;
+  justify-content: flex-end;
+}
+
+
+
+
+
+
+/* =====================================================
+   PANEL KENAPA PILIH INI
+   KHUSUS RUMAH MAKAN
+   ===================================================== */
+
+.kuliner-highlight {
+  background: linear-gradient(
+    145deg,
+    #171717,
+    #292929
+  );
+
+  border-radius: 22px;
+
+  padding: 28px;
+
+  color: #ffffff;
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.16);
+
+  height: fit-content;
+}
+
+
+.kuliner-highlight-title {
+  font-size: 15px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+
+  color: #f2a900;
+
+  margin-bottom: 20px;
+
+  padding-bottom: 15px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+.kuliner-feature {
+  display: flex;
+
+  gap: 14px;
+
+  align-items: flex-start;
+
+  padding: 15px 0;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, 0.08);
+}
+
+
+.kuliner-feature:last-child {
+  border-bottom: none;
+
+  padding-bottom: 0;
+}
+
+
+.kuliner-icon {
+  width: 42px;
+
+  height: 42px;
+
+  min-width: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    rgba(242, 169, 0, 0.14);
+
+  border-radius: 12px;
+
+  font-size: 21px;
+}
+
+
+.kuliner-feature strong {
+  display: block;
+
+  font-size: 14px;
+
+  margin-bottom: 5px;
+
+  color: #ffffff;
+}
+
+
+.kuliner-feature p {
+  margin: 0;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+
+  color:
+    rgba(255, 255, 255, 0.65);
+}
+
+
+
+
+/* =========================================================
+   REDESIGN KARTU DESTINASI
+   STYLE PREMIUM HITAM + EMAS
+   ========================================================= */
+
+
+/* GRID */
+
+#cardsGrid {
+  gap: 16px;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+#cardsGrid .card {
+
+  position: relative;
+
+  background: #11100e;
+
+  color: #ffffff;
+
+  border:
+    1px solid
+    rgba(233, 168, 46, .35);
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 12px 28px
+    rgba(20, 14, 8, .16);
+
+  transform: none;
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease,
+    border-color .3s ease;
+
+}
+
+
+#cardsGrid .card:hover {
+
+  transform:
+    translateY(-6px);
+
+  border-color:
+    rgba(255, 200, 90, .75);
+
+  box-shadow:
+    0 20px 38px
+    rgba(20, 14, 8, .28);
+
+}
+
+
+/* =========================================================
+   IMAGE
+   ========================================================= */
+
+#cardsGrid .card-image {
+
+  height: 205px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      #3a2a17,
+      #15120e
+    );
+
+}
+
+
+#cardsGrid .card-image img {
+
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform .45s ease,
+    filter .35s ease;
+
+}
+
+
+#cardsGrid .card:hover
+.card-image img {
+
+  transform:
+    scale(1.055);
+
+  filter:
+    saturate(1.08);
+
+}
+
+
+/* =========================================================
+   DARK GRADIENT FOTO
+   ========================================================= */
+
+#cardsGrid .card-image-shade {
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.05) 15%,
+      rgba(0,0,0,.18) 45%,
+      rgba(0,0,0,.72) 100%
+    );
+
+}
+
+
+/* =========================================================
+   BADGE KATEGORI
+   ========================================================= */
+
+#cardsGrid .badge {
+
+  position: absolute;
+
+  z-index: 5;
+
+  top: 12px;
+
+  left: 12px;
+
+  padding:
+    8px 12px;
+
+  border-radius:
+    8px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f7c84b,
+      #df8a18
+    );
+
+  color:
+    #17120c;
+
+  font-size:
+    9px;
+
+  font-weight:
+    900;
+
+  letter-spacing:
+    .2px;
+
+  box-shadow:
+    0 5px 12px
+    rgba(0,0,0,.2);
+
+}
+
+
+#cardsGrid .badge-icon {
+
+  margin-right:
+    3px;
+
+  font-size:
+    9px;
+
+}
+
+
+/* Semua kategori tetap gold */
+
+#cardsGrid .badge.wisata,
+#cardsGrid .badge.hotel,
+#cardsGrid .badge.kuliner,
+#cardsGrid .badge.event {
+
+  background:
+    linear-gradient(
+      135deg,
+      #f7c84b,
+      #df8a18
+    );
+
+  color:
+    #17120c;
+
+}
+
+
+/* =========================================================
+   FAVORITE BUTTON
+   ========================================================= */
+
+#cardsGrid .card-favorite {
+
+  position: absolute;
+
+  z-index: 6;
+
+  top: 10px;
+
+  right: 10px;
+
+  width: 34px;
+
+  height: 34px;
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 0;
+
+  border:
+    1px solid
+    rgba(255,255,255,.65);
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(10,10,10,.38);
+
+  backdrop-filter:
+    blur(5px);
+
+  color:
+    #ffffff;
+
+  font-size:
+    22px;
+
+  line-height:
+    1;
+
+  cursor:
+    pointer;
+
+  transition:
+    .2s ease;
+
+}
+
+
+#cardsGrid .card-favorite:hover {
+
+  background:
+    #e9a82e;
+
+  border-color:
+    #e9a82e;
+
+  color:
+    #17120c;
+
+  transform:
+    scale(1.08);
+
+}
+
+
+/* =========================================================
+   CARD BODY
+   ========================================================= */
+
+#cardsGrid .card-body {
+
+  padding:
+    17px 15px 14px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #151411 0%,
+      #0e0e0d 100%
+    );
+
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+#cardsGrid .card-body h3 {
+
+  color:
+    #ffffff;
+
+  font:
+    600 20px/1.12
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  margin:
+    0 0 9px;
+
+}
+
+
+/* =========================================================
+   LOCATION
+   ========================================================= */
+
+#cardsGrid .card-meta {
+
+  display:
+    flex;
+
+  align-items:
+    flex-start;
+
+  gap:
+    7px;
+
+  min-height:
+    28px;
+
+  margin-bottom:
+    8px;
+
+  color:
+    #c7c2b9;
+
+  font-size:
+    9.5px;
+
+  line-height:
+    1.45;
+
+}
+
+
+#cardsGrid .meta-pin {
+
+  flex:
+    0 0 auto;
+
+  color:
+    #f2ad31;
+
+  font-size:
+    10px;
+
+  margin-top:
+    1px;
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+#cardsGrid .card-body p {
+
+  min-height:
+    53px;
+
+  color:
+    #c1beb8;
+
+  font-size:
+    10.5px;
+
+  line-height:
+    1.55;
+
+  margin:
+    0 0 13px;
+
+}
+
+
+/* =========================================================
+   INFORMATION FEATURES
+   ========================================================= */
+
+#cardsGrid .card-features {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap:
+    5px;
+
+  padding:
+    10px 0;
+
+  border-top:
+    1px solid
+    rgba(255,255,255,.10);
+
+  border-bottom:
+    1px solid
+    rgba(255,255,255,.10);
+
+}
+
+
+/* ITEM */
+
+#cardsGrid .card-features span {
+
+  min-width:
+    0;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    4px;
+
+  text-align:
+    center;
+
+}
+
+
+/* ICON CIRCLE */
+
+#cardsGrid .card-features b {
+
+  width:
+    27px;
+
+  height:
+    27px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border:
+    1px solid
+    rgba(233,168,46,.70);
+
+  border-radius:
+    50%;
+
+  color:
+    #f4b43b;
+
+  font-size:
+    11px;
+
+  font-weight:
+    700;
+
+}
+
+
+/* LABEL */
+
+#cardsGrid .card-features small {
+
+  color:
+    #d4d0c8;
+
+  font-size:
+    7.5px;
+
+  line-height:
+    1.2;
+
+  white-space:
+    nowrap;
+
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+#cardsGrid .card-footer {
+
+  min-height:
+    48px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    10px;
+
+  padding-top:
+    11px;
+
+  border-top:
+    0;
+
+}
+
+
+/* =========================================================
+   PRICE
+   ========================================================= */
+
+#cardsGrid .price {
+
+  max-width:
+    45%;
+
+  overflow:
+    hidden;
+
+  color:
+    #f2b33d;
+
+  font-size:
+    9px;
+
+  line-height:
+    1.3;
+
+  text-overflow:
+    ellipsis;
+
+}
+
+
+/* =========================================================
+   SELENGKAPNYA BUTTON
+   ========================================================= */
+
+#cardsGrid .more {
+
+  margin-left:
+    auto;
+
+  border:
+    0;
+
+  border-radius:
+    9px;
+
+  padding:
+    9px 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffc94f,
+      #e59b22
+    );
+
+  color:
+    #17120c;
+
+  font-size:
+    9px;
+
+  font-weight:
+    900;
+
+  letter-spacing:
+    .15px;
+
+  white-space:
+    nowrap;
+
+  cursor:
+    pointer;
+
+  transition:
+    .2s ease;
+
+}
+
+
+#cardsGrid .more:hover {
+
+  background:
+    #fff0c8;
+
+  transform:
+    translateY(-1px);
+
+}
+
+
+#cardsGrid .more span {
+
+  margin-left:
+    4px;
+
+  font-size:
+    12px;
+
+}
+
+
+/* =========================================================
+   KARTU KULINER
+   ========================================================= */
+
+#cardsGrid .card-kuliner {
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+}
+
+
+#cardsGrid .card-kuliner
+.card-body {
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  flex: 1;
+
+}
+
+
+#cardsGrid .card-kuliner
+.card-body p {
+
+  flex:
+    1;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE MOBILE
+   ========================================================= */
+
+@media (max-width: 620px) {
+
+  #cardsGrid {
+
+    gap:
+      14px;
+
+  }
+
+
+  #cardsGrid .card-image {
+
+    height:
+      210px;
+
+  }
+
+
+  #cardsGrid .card-body {
+
+    padding:
+      16px 14px 13px;
+
+  }
+
+
+  #cardsGrid .card-body h3 {
+
+    font-size:
+      19px;
+
+  }
+
+
+  #cardsGrid .card-features small {
+
+    font-size:
+      7px;
+
+  }
+
+
+  #cardsGrid .card-favorite {
+
+    width:
+      32px;
+
+    height:
+      32px;
+
+  }
+
+}
+
+
+
+/* =========================================================
+   HOTEL - TOMBOL SELENGKAPNYA
+========================================================= */
+
+.btn-hotel-detail{
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffc85a,
+      #e5a027
+    ) !important;
+
+  color:#17130f !important;
+
+  border:1px solid #e2a02b !important;
+
+  box-shadow:
+    0 8px 20px rgba(205,145,35,.20);
+
+  cursor:pointer;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
+
+}
+
+.btn-hotel-detail:hover{
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 12px 26px rgba(205,145,35,.30);
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffd477,
+      #eda72b
+    ) !important;
+
+}
+
+
+/* =========================================================
+   HALAMAN DETAIL HOTEL
+========================================================= */
+
+.hotel-detail-page{
+
+  position:relative;
+
+  min-height:100%;
+
+  padding:
+    30px
+    34px
+    45px;
+
+  overflow:hidden;
+
+  background:
+
+    radial-gradient(
+      circle at 4% 5%,
+      rgba(233,168,46,.18),
+      transparent 25%
+    ),
+
+    radial-gradient(
+      circle at 96% 18%,
+      rgba(38,125,98,.13),
+      transparent 28%
+    ),
+
+    linear-gradient(
+      135deg,
+      #fffdf8 0%,
+      #f7f3ea 48%,
+      #efeee9 100%
+    );
+
+}
+
+
+/* ornamen */
+
+.hotel-detail-page::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:300px;
+  height:300px;
+
+  border-radius:50%;
+
+  right:-120px;
+  top:-130px;
+
+  border:
+    45px solid
+    rgba(231,170,55,.07);
+
+  pointer-events:none;
+
+}
+
+
+.hotel-detail-page::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:240px;
+  height:240px;
+
+  border-radius:50%;
+
+  left:-120px;
+  bottom:-130px;
+
+  background:
+    rgba(29,112,87,.06);
+
+  pointer-events:none;
+
+}
+
+
+/* =========================================================
+   HEADER DETAIL HOTEL
+========================================================= */
+
+.hotel-detail-header{
+
+  position:relative;
+
+  z-index:2;
+
+}
+
+
+.hotel-back-btn{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  border:
+    1px solid
+    rgba(30,27,23,.12);
+
+  background:#fff;
+
+  color:#211d18;
+
+  padding:
+    10px
+    17px;
+
+  border-radius:12px;
+
+  font-size:11px;
+
+  font-weight:800;
+
+  cursor:pointer;
+
+  box-shadow:
+    0 6px 18px
+    rgba(0,0,0,.06);
+
+  transition:
+    .25s ease;
+
+}
+
+
+.hotel-back-btn:hover{
+
+  background:#211d18;
+
+  color:#fff;
+
+  transform:
+    translateY(-2px);
+
+}
+
+
+/* =========================================================
+   JUDUL HOTEL
+========================================================= */
+
+.hotel-heading{
+
+  margin-top:25px;
+
+  padding:
+    25px
+    28px;
+
+  border-radius:20px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #17130f 0%,
+      #2c241b 100%
+    );
+
+  box-shadow:
+    0 16px 38px
+    rgba(25,20,12,.18);
+
+}
+
+
+.hotel-heading::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:190px;
+  height:190px;
+
+  border-radius:50%;
+
+  border:
+    35px solid
+    rgba(238,176,58,.08);
+
+  right:-75px;
+  top:-90px;
+
+}
+
+
+.hotel-heading p{
+
+  position:relative;
+
+  z-index:2;
+
+  margin:
+    0 0 8px;
+
+  color:#e9a82e;
+
+  font-size:10px;
+
+  font-weight:800;
+
+  letter-spacing:4px;
+
+}
+
+
+.hotel-heading h2{
+
+  position:relative;
+
+  z-index:2;
+
+  margin:0 0 10px;
+
+  color:#fff;
+
+  font:
+    500 35px/1.2
+    "Playfair Display",
+    Georgia,
+    serif;
+
+}
+
+
+.hotel-heading span{
+
+  position:relative;
+
+  z-index:2;
+
+  display:inline-block;
+
+  padding:
+    6px 12px;
+
+  border-radius:20px;
+
+  background:
+    rgba(255,255,255,.09);
+
+  color:#d9d2c7;
+
+  font-size:9px;
+
+  font-weight:700;
+
+  letter-spacing:1.5px;
+
+}
+
+
+/* =========================================================
+   GALERI
+========================================================= */
+
+.hotel-photo-section{
+
+  position:relative;
+
+  z-index:2;
+
+  margin-top:28px;
+
+}
+
+
+.hotel-section-title{
+
+  display:flex;
+
+  align-items:end;
+
+  justify-content:space-between;
+
+  gap:20px;
+
+  margin-bottom:16px;
+
+}
+
+
+.hotel-eyebrow{
+
+  margin:0 0 6px;
+
+  color:#b56f15;
+
+  font-size:9px;
+
+  font-weight:800;
+
+  letter-spacing:3px;
+
+}
+
+
+.hotel-section-title h3{
+
+  margin:0;
+
+  color:#211d18;
+
+  font:
+    600 24px
+    "Playfair Display",
+    Georgia,
+    serif;
+
+}
+
+
+.hotel-photo-count{
+
+  padding:
+    7px 13px;
+
+  border-radius:20px;
+
+  background:#211d18;
+
+  color:#fff;
+
+  font-size:10px;
+
+  font-weight:800;
+
+}
+
+
+/* =========================================================
+   GRID 8 FOTO
+========================================================= */
+
+.hotel-photo-grid{
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(4,minmax(0,1fr));
+
+  gap:13px;
+
+}
+
+
+.hotel-photo-card{
+
+  position:relative;
+
+  height:145px;
+
+  overflow:hidden;
+
+  border-radius:14px;
+
+  background:#d8d4cc;
+
+  border:
+    3px solid
+    rgba(255,255,255,.95);
+
+  box-shadow:
+    0 8px 22px
+    rgba(32,25,15,.09);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+
+}
+
+
+.hotel-photo-card:hover{
+
+  transform:
+    translateY(-4px);
+
+  box-shadow:
+    0 15px 30px
+    rgba(32,25,15,.16);
+
+}
+
+
+.hotel-photo-card img{
+
+  width:100%;
+
+  height:100%;
+
+  display:block;
+
+  object-fit:cover;
+
+  transition:
+    transform .5s ease;
+
+}
+
+
+.hotel-photo-card:hover img{
+
+  transform:
+    scale(1.07);
+
+}
+
+
+/* lapisan foto */
+
+.hotel-photo-card::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  pointer-events:none;
+
+  background:
+    linear-gradient(
+      0deg,
+      rgba(0,0,0,.42),
+      transparent 55%
+    );
+
+}
+
+
+.hotel-photo-overlay{
+
+  position:absolute;
+
+  z-index:3;
+
+  left:9px;
+
+  bottom:8px;
+
+}
+
+
+.hotel-photo-overlay span{
+
+  display:grid;
+
+  place-items:center;
+
+  width:27px;
+  height:27px;
+
+  border-radius:50%;
+
+  background:
+    rgba(17,16,14,.78);
+
+  border:
+    1px solid
+    rgba(255,255,255,.45);
+
+  color:#fff;
+
+  font-size:9px;
+
+  font-weight:800;
+
+}
+
+
+.hotel-photo-empty{
+
+  background:
+
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(233,168,46,.18),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      135deg,
+      #28221b,
+      #15130f
+    );
+
+}
+
+
+.hotel-photo-placeholder{
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:2;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  flex-direction:column;
+
+  color:#e9a82e;
+
+  letter-spacing:2px;
+
+}
+
+
+.hotel-photo-placeholder strong{
+
+  font-size:10px;
+
+}
+
+
+.hotel-photo-placeholder small{
+
+  margin-top:4px;
+
+  font-size:24px;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  color:#fff;
+
+}
+
+
+/* =========================================================
+   INFORMASI HOTEL
+========================================================= */
+
+.hotel-information{
+
+  position:relative;
+
+  z-index:2;
+
+  display:grid;
+
+  grid-template-columns:
+    .9fr
+    1.25fr
+    .8fr;
+
+  gap:17px;
+
+  margin-top:25px;
+
+}
+
+
+/* kolom kiri */
+
+.hotel-info-column{
+
+  display:grid;
+
+  gap:11px;
+
+}
+
+
+.hotel-info-box{
+
+  padding:
+    17px;
+
+  border-radius:14px;
+
+  background:
+    rgba(255,255,255,.80);
+
+  border:
+    1px solid
+    #e4ded3;
+
+  box-shadow:
+    0 5px 18px
+    rgba(40,30,15,.04);
+
+}
+
+
+.hotel-info-label{
+
+  display:block;
+
+  margin-bottom:7px;
+
+  color:#ad6811;
+
+  font-size:8px;
+
+  font-weight:900;
+
+  letter-spacing:2px;
+
+}
+
+
+.hotel-info-box h4{
+
+  margin:0;
+
+  color:#514d47;
+
+  font-size:11px;
+
+  line-height:1.6;
+
+  font-weight:600;
+
+}
+
+
+/* =========================================================
+   FASILITAS
+========================================================= */
+
+.hotel-facility-column{
+
+  padding:
+    20px;
+
+  border-radius:16px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #211c16,
+      #17130f
+    );
+
+  color:#fff;
+
+  box-shadow:
+    0 10px 25px
+    rgba(20,15,10,.14);
+
+}
+
+
+.hotel-facility-column .hotel-eyebrow{
+
+  color:#e9a82e;
+
+}
+
+
+.hotel-facility-title h3{
+
+  margin:0 0 15px;
+
+  font:
+    500 20px
+    "Playfair Display",
+    Georgia,
+    serif;
+
+}
+
+
+.hotel-facility-list{
+
+  display:grid;
+
+  gap:8px;
+
+}
+
+
+.hotel-facility-item{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:10px;
+
+  padding:
+    10px;
+
+  border-radius:10px;
+
+  background:
+    rgba(255,255,255,.06);
+
+  border:
+    1px solid
+    rgba(255,255,255,.08);
+
+}
+
+
+.facility-icon{
+
+  width:31px;
+  height:31px;
+
+  flex:0 0 31px;
+
+  display:grid;
+
+  place-items:center;
+
+  border-radius:50%;
+
+  border:
+    1px solid
+    rgba(233,168,46,.55);
+
+  color:#ffc85a;
+
+  font-size:13px;
+
+}
+
+
+.hotel-facility-item strong{
+
+  display:block;
+
+  color:#fff;
+
+  font-size:10px;
+
+  margin-bottom:2px;
+
+}
+
+
+.hotel-facility-item small{
+
+  display:block;
+
+  color:#aaa39a;
+
+  font-size:8px;
+
+}
+
+
+/* =========================================================
+   HARGA
+========================================================= */
+
+.hotel-price-column{
+
+  padding:
+    20px;
+
+  border-radius:16px;
+
+  background:#fff;
+
+  border:
+    1px solid
+    #e3ddd3;
+
+  box-shadow:
+    0 7px 22px
+    rgba(35,25,12,.06);
+
+}
+
+
+.hotel-price{
+
+  margin:
+    8px 0 12px;
+
+  color:#a8610d;
+
+  font:
+    700 19px/1.3
+    "Playfair Display",
+    Georgia,
+    serif;
+
+}
+
+
+.hotel-price-column p{
+
+  margin:0 0 17px;
+
+  color:#777;
+
+  font-size:9px;
+
+  line-height:1.6;
+
+}
+
+
+.hotel-map-button{
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  min-height:37px;
+
+  padding:
+    0 12px;
+
+  border-radius:10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffc85a,
+      #e5a027
+    );
+
+  color:#17130f;
+
+  font-size:9px;
+
+  font-weight:900;
+
+}
+
+
+/* =========================================================
+   DESKRIPSI
+========================================================= */
+
+.hotel-description{
+
+  position:relative;
+
+  z-index:2;
+
+  display:grid;
+
+  grid-template-columns:
+    .65fr
+    1.35fr;
+
+  gap:25px;
+
+  margin-top:20px;
+
+  padding:
+    22px;
+
+  border-radius:16px;
+
+  background:
+    rgba(255,255,255,.72);
+
+  border:
+    1px solid
+    #e3ddd3;
+
+}
+
+
+.hotel-description h3{
+
+  margin:0;
+
+  font:
+    600 21px
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  color:#211d18;
+
+}
+
+
+.hotel-description > p{
+
+  margin:0;
+
+  color:#68645e;
+
+  font-size:11px;
+
+  line-height:1.7;
+
+}
+
+
+.hotel-description .hotel-extra{
+
+  grid-column:1/-1;
+
+  padding-top:12px;
+
+  margin-top:0;
+
+  border-top:
+    1px solid
+    #e5dfd5;
+
+  color:#8a6a3e;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE HOTEL
+========================================================= */
+
+@media(max-width:1000px){
+
+  .hotel-photo-grid{
+
+    grid-template-columns:
+      repeat(3,minmax(0,1fr));
+
+  }
+
+
+  .hotel-information{
+
+    grid-template-columns:
+      1fr 1fr;
+
+  }
+
+
+  .hotel-price-column{
+
+    grid-column:
+      1 / -1;
+
+  }
+
+}
+
+
+@media(max-width:700px){
+
+  .hotel-detail-page{
+
+    padding:
+      22px
+      17px
+      30px;
+
+  }
+
+
+  .hotel-heading h2{
+
+    font-size:27px;
+
+  }
+
+
+  .hotel-photo-grid{
+
+    grid-template-columns:
+      repeat(2,minmax(0,1fr));
+
+    gap:10px;
+
+  }
+
+
+  .hotel-photo-card{
+
+    height:135px;
+
+  }
+
+
+  .hotel-information{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  .hotel-price-column{
+
+    grid-column:auto;
+
+  }
+
+
+  .hotel-description{
+
+    grid-template-columns:1fr;
+
+    gap:13px;
+
+  }
+
+
+  .hotel-description .hotel-extra{
+
+    grid-column:auto;
+
+  }
+
+}
+
+
+@media(max-width:420px){
+
+  .hotel-photo-grid{
+
+    grid-template-columns:1fr 1fr;
+
+  }
+
+
+  .hotel-photo-card{
+
+    height:120px;
+
+  }
+
+
+  .hotel-heading{
+
+    padding:21px;
+
+  }
+
+
+  .hotel-heading h2{
+
+    font-size:24px;
+
+  }
+
+}
+
+
+
+/* =========================================================
+   =========================================================
+   GALLERY EVENT
+   KHUSUS EVENT SAJA
+   DESAIN 3 x 3 SESUAI SKETSA
+   TEMA JELAJAH MUBA
+   =========================================================
+   ========================================================= */
+
+
+/* =========================================
+   HALAMAN UTAMA GALLERY
+========================================= */
+
+.event-gallery-page{
+
+  position:relative;
+
+  min-height:100%;
+
+  padding:38px 38px 50px;
+
+  overflow:hidden;
+
+  background:
+
+    radial-gradient(
+      circle at 8% 5%,
+      rgba(224,168,58,.18),
+      transparent 28%
+    ),
+
+    radial-gradient(
+      circle at 95% 20%,
+      rgba(32,125,101,.14),
+      transparent 30%
+    ),
+
+    linear-gradient(
+      135deg,
+      #fffdf8 0%,
+      #f7f3ea 45%,
+      #f0eee8 100%
+    );
+
+}
+
+
+
+/* =========================================
+   ORNAMEN BACKGROUND
+========================================= */
+
+.event-gallery-page::before{
+
+  content:"";
+
+  position:absolute;
+
+  width:260px;
+  height:260px;
+
+  border-radius:50%;
+
+  background:
+    rgba(224,168,58,.08);
+
+  top:-100px;
+  right:-70px;
+
+  pointer-events:none;
+
+}
+
+
+
+.event-gallery-page::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:220px;
+  height:220px;
+
+  border-radius:50%;
+
+  background:
+    rgba(26,111,89,.07);
+
+  bottom:-100px;
+  left:-70px;
+
+  pointer-events:none;
+
+}
+
+
+
+/* =========================================
+   TOMBOL KEMBALI
+========================================= */
+
+.event-gallery-back{
+
+  position:relative;
+
+  z-index:5;
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:8px;
+
+  border:
+    1px solid
+    rgba(31,29,25,.12);
+
+  background:#fff;
+
+  color:#211d18;
+
+  padding:
+    12px 20px;
+
+  border-radius:12px;
+
+  cursor:pointer;
+
+  font-family:inherit;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  box-shadow:
+    0 5px 18px
+    rgba(0,0,0,.06);
+
+  transition:
+    .25s ease;
+
+}
+
+
+
+.event-gallery-back:hover{
+
+  background:#211d18;
+
+  color:#fff;
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 8px 22px
+    rgba(0,0,0,.12);
+
+}
+
+
+
+/* =========================================
+   HEADER / JUDUL
+========================================= */
+
+.event-gallery-heading{
+
+  position:relative;
+
+  z-index:2;
+
+  margin-top:35px;
+
+  margin-bottom:30px;
+
+  padding:
+    28px 30px;
+
+  border-radius:20px;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #211d18 0%,
+      #30281e 100%
+    );
+
+  box-shadow:
+
+    0 14px 35px
+    rgba(31,29,25,.16);
+
+  overflow:hidden;
+
+}
+
+
+
+/* Ornamen lingkaran emas */
+
+.event-gallery-heading::after{
+
+  content:"";
+
+  position:absolute;
+
+  width:180px;
+  height:180px;
+
+  border-radius:50%;
+
+  border:
+    35px solid
+    rgba(232,174,54,.08);
+
+  right:-70px;
+  top:-80px;
+
+}
+
+
+
+/* tulisan kecil */
+
+.event-gallery-heading p{
+
+  position:relative;
+
+  z-index:2;
+
+  color:#e7aa38;
+
+  font-size:11px;
+
+  font-weight:800;
+
+  letter-spacing:4px;
+
+  margin:
+    0 0 10px;
+
+}
+
+
+
+/* Judul event */
+
+.event-gallery-heading h2{
+
+  position:relative;
+
+  z-index:2;
+
+  margin:
+    0 0 8px;
+
+  color:#fff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:34px;
+
+  line-height:1.2;
+
+}
+
+
+
+/* Jumlah foto */
+
+.event-gallery-heading span{
+
+  position:relative;
+
+  z-index:2;
+
+  display:inline-block;
+
+  color:#d8d1c6;
+
+  font-size:13px;
+
+  padding:
+    6px 12px;
+
+  border-radius:20px;
+
+  background:
+    rgba(255,255,255,.08);
+
+}
+
+
+
+/* =========================================
+   GRID FOTO
+   3 KOLOM × 3 BARIS
+========================================= */
+
+.event-gallery-grid{
+
+  position:relative;
+
+  z-index:2;
+
+  display:grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0,1fr)
+    );
+
+  gap:18px;
+
+}
+
+
+
+/* =========================================
+   CARD FOTO
+========================================= */
+
+.event-gallery-photo{
+
+  position:relative;
+
+  height:210px;
+
+  overflow:hidden;
+
+  border-radius:16px;
+
+  background:#ddd;
+
+  border:
+    4px solid
+    rgba(255,255,255,.8);
+
+  box-shadow:
+    0 8px 25px
+    rgba(0,0,0,.10);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+
+}
+
+
+
+/* Gradient di bagian bawah foto */
+
+.event-gallery-photo::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+
+    linear-gradient(
+      to top,
+      rgba(0,0,0,.42),
+      transparent 45%
+    );
+
+  opacity:.7;
+
+  pointer-events:none;
+
+}
+
+
+
+/* =========================================
+   FOTO
+========================================= */
+
+.event-gallery-photo img{
+
+  width:100%;
+
+  height:100%;
+
+  display:block;
+
+  object-fit:cover;
+
+  transition:
+    transform .5s ease;
+
+}
+
+
+
+/* =========================================
+   HOVER FOTO
+========================================= */
+
+.event-gallery-photo:hover{
+
+  transform:
+    translateY(-6px);
+
+  box-shadow:
+
+    0 16px 35px
+    rgba(0,0,0,.18);
+
+}
+
+
+
+.event-gallery-photo:hover img{
+
+  transform:
+    scale(1.08);
+
+}
+
+
+
+/* =========================================
+   NOMOR FOTO
+========================================= */
+
+.event-gallery-number{
+
+  position:absolute;
+
+  z-index:5;
+
+  left:12px;
+
+  bottom:10px;
+
+  width:28px;
+
+  height:28px;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:#e7aa38;
+
+  color:#211d18;
+
+  font-size:11px;
+
+  font-weight:800;
+
+}
+
+
+
+/* =========================================
+   PLACEHOLDER
+========================================= */
+
+.event-gallery-placeholder{
+
+  position:absolute;
+
+  inset:0;
+
+  z-index:1;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  color:#211d18;
+
+  background:
+
+    linear-gradient(
+      135deg,
+      #f6f1e5,
+      #e9e1d0
+    );
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:24px;
+
+  font-weight:600;
+
+}
+
+
+
+/* Sembunyikan placeholder jika gambar berhasil */
+
+.event-gallery-photo:not(.is-empty)
+.event-gallery-placeholder{
+
+  display:none;
+
+}
+
+
+
+/* =========================================
+   TOMBOL SELENGKAPNYA EVENT
+========================================= */
+
+.btn-event-gallery{
+
+  border:
+    1px solid
+    #211d18 !important;
+
+  background:
+    #211d18 !important;
+
+  color:#fff !important;
+
+  cursor:pointer;
+
+  transition:
+    .25s ease;
+
+}
+
+
+
+/* Hover */
+
+.btn-event-gallery:hover{
+
+  background:
+    #e7aa38 !important;
+
+  border-color:
+    #e7aa38 !important;
+
+  color:#211d18 !important;
+
+  transform:
+    translateY(-2px);
+
+}
+
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media(max-width:1000px){
+
+  .event-gallery-grid{
+
+    grid-template-columns:
+      repeat(
+        3,
+        minmax(0,1fr)
+      );
+
+  }
+
+
+  .event-gallery-photo{
+
+    height:190px;
+
+  }
+
+}
+
+
+
+/* =========================================
+   HP
+========================================= */
+
+@media(max-width:700px){
+
+  .event-gallery-page{
+
+    padding:
+      25px 18px 35px;
+
+  }
+
+
+  .event-gallery-heading{
+
+    padding:22px;
+
+    margin-top:25px;
+
+  }
+
+
+  .event-gallery-heading h2{
+
+    font-size:27px;
+
+  }
+
+
+  .event-gallery-grid{
+
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0,1fr)
+      );
+
+    gap:12px;
+
+  }
+
+
+  .event-gallery-photo{
+
+    height:150px;
+
+    border-radius:12px;
+
+  }
+
+}
+
+
+
+/* =========================================
+   HP KECIL
+========================================= */
+
+@media(max-width:420px){
+
+  .event-gallery-grid{
+
+    grid-template-columns:1fr;
+
+  }
+
+
+  .event-gallery-photo{
+
+    height:210px;
+
+  }
+
+}
+
+
