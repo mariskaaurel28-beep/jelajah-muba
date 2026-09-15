@@ -961,6 +961,64 @@ async function deleteItemFromSupabase(id){
 }
 
 
+
+async function loadDataFromSupabase(){
+  const { data, error } = await supabaseClient
+    .from("jelajah_muba")
+    .select("*");
+
+  if (error) {
+    console.error("Gagal mengambil data Supabase:", error);
+    return;
+  }
+
+  if (!Array.isArray(data) || data.length === 0) {
+    console.warn("Data Supabase kosong.");
+    return;
+  }
+
+  const freshData = {
+    wisata: [],
+    hotel: [],
+    kuliner: [],
+    event: [],
+    prestasi: []
+  };
+
+  data.forEach(row => {
+    const item = {
+      id: String(row.id),
+      name: row.name || "",
+      category: row.category || "",
+      desc: row.desc || "",
+      address: row.address || "",
+      price: row.price || "",
+      hours: row.hours || "",
+      map: row.map || "",
+      image: row.image || "",
+      extra: row.extra || ""
+    };
+
+    const id = item.id;
+
+    if (id.startsWith("w")) {
+      freshData.wisata.push(item);
+    } else if (id.startsWith("h")) {
+      freshData.hotel.push(item);
+    } else if (id.startsWith("k")) {
+      freshData.kuliner.push(item);
+    } else if (id.startsWith("e")) {
+      freshData.event.push(item);
+    }
+  });
+
+  DATA = freshData;
+  saveData();
+  renderAll();
+  loadDataFromSupabase();
+  renderEditor();
+}
+
 let DATA = loadData();
 
 
