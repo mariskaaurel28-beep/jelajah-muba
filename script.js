@@ -5474,3 +5474,4 @@ if(year){
 ============================== */
 
 renderAll();
+loadDataFromSupabase();
