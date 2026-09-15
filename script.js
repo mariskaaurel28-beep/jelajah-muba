@@ -928,6 +928,38 @@ function saveData(){
 
 }
 
+function toSupabaseRow(item){
+  return {
+    id: String(item.id),
+    name: item.name || "",
+    category: item.category || "",
+    desc: item.desc || "",
+    address: item.address || "",
+    price: item.price || "",
+    hours: item.hours || "",
+    map: item.map || "",
+    image: item.image || "",
+    extra: item.extra || ""
+  };
+}
+
+async function saveItemToSupabase(item){
+  const { error } = await supabaseClient
+    .from("jelajah_muba")
+    .upsert([toSupabaseRow(item)], { onConflict: "id" });
+
+  if (error) throw error;
+}
+
+async function deleteItemFromSupabase(id){
+  const { error } = await supabaseClient
+    .from("jelajah_muba")
+    .delete()
+    .eq("id", String(id));
+
+  if (error) throw error;
+}
+
 
 let DATA = loadData();
 
@@ -5118,12 +5150,10 @@ const dataForm =
 if(dataForm){
 
   dataForm.addEventListener(
+  "submit",
+  async e => {
 
-    "submit",
-
-    e => {
-
-      e.preventDefault();
+    e.preventDefault();
 
 
       const type =
@@ -5235,6 +5265,8 @@ if(dataForm){
             .trim()
 
       };
+
+      await saveItemToSupabase(item);
 
 
       const idx =
