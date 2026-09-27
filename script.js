@@ -4641,10 +4641,8 @@ async function deleteItem(id){
 
   try{
 
-    // Hapus dari Supabase terlebih dahulu
     await deleteItemFromSupabase(id);
 
-    // Kalau berhasil, baru hapus dari DATA lokal
     DATA[editorType] =
       DATA[editorType].filter(
         x => x.id !== id
@@ -4656,20 +4654,13 @@ async function deleteItem(id){
 
     renderEditor();
 
-    toast(
-      "Data berhasil dihapus."
-    );
+    toast("Data berhasil dihapus.");
 
   }catch(error){
 
-    console.error(
-      "Gagal menghapus data:",
-      error
-    );
+    console.error("Gagal menghapus data:", error);
 
-    alert(
-      "Gagal menghapus data. Silakan coba lagi."
-    );
+    alert("Gagal menghapus data. Silakan coba lagi.");
 
   }
 
