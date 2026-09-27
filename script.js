@@ -4248,9 +4248,9 @@ const EVENT_GALLERY_PHOTOS = {
     "images/event/e8/foto1.jpeg",
     "images/event/e8/foto2.jpeg",
     "images/event/e8/foto3.jpeg",
-    "images/event/e8/foto10.jpeg",
+    "images/event/e8/foto4.jpeg",
     "images/event/e8/foto5.jpeg",
-    "images/event/e8/foto11.jpeg",
+    "images/event/e8/foto6.jpeg",
     "images/event/e8/foto7.jpeg",
     "images/event/e8/foto8.jpeg",
     "images/event/e8/foto9.jpeg"
