@@ -1014,7 +1014,6 @@ async function loadDataFromSupabase(){
 
   DATA = freshData;
   saveData();
-  loadDataFromSupabase();
   renderAll();
   renderEditor();
 }
