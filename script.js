@@ -3214,20 +3214,10 @@ const HOTEL_DETAIL_PHOTOS = {
     "images/hotel1/h9/foto6.jpeg",
     "images/hotel1/h9/foto7.jpeg",
     "images/hotel1/h9/foto8.jpeg"
-  ],
-
-  h10: [
-    "images/hotel/h10/foto1.jpg",
-    "images/hotel/h10/foto2.jpg",
-    "images/hotel/h10/foto3.jpg",
-    "images/hotel/h10/foto4.jpg",
-    "images/hotel/h10/foto5.jpg",
-    "images/hotel/h10/foto6.jpg",
-    "images/hotel/h10/foto7.jpg",
-    "images/hotel/h10/foto8.jpg"
   ]
 
-};
+
+  };
 
 
 /* =========================================================
@@ -4643,37 +4633,47 @@ function addItem(){
    DELETE ITEM
 ============================== */
 
-function deleteItem(id){
+async function deleteItem(id){
 
-  if(
-    !confirm("Hapus data ini?")
-  ){
-
+  if(!confirm("Hapus data ini?")){
     return;
+  }
+
+  try{
+
+    // Hapus dari Supabase terlebih dahulu
+    await deleteItemFromSupabase(id);
+
+    // Kalau berhasil, baru hapus dari DATA lokal
+    DATA[editorType] =
+      DATA[editorType].filter(
+        x => x.id !== id
+      );
+
+    saveData();
+
+    renderAll();
+
+    renderEditor();
+
+    toast(
+      "Data berhasil dihapus."
+    );
+
+  }catch(error){
+
+    console.error(
+      "Gagal menghapus data:",
+      error
+    );
+
+    alert(
+      "Gagal menghapus data. Silakan coba lagi."
+    );
 
   }
 
-
-  DATA[editorType] =
-    DATA[editorType].filter(
-      x => x.id !== id
-    );
-
-
-  saveData();
-
-
-  renderAll();
-
-  renderEditor();
-
-
-  toast(
-    "Data berhasil dihapus."
-  );
-
 }
-
 
 /* ==============================
    GENERATE ID
